@@ -1,5 +1,5 @@
 import bent from 'bent';
-import { getValue, setExpValue } from '../../../../utils/redis';
+import { getValue, setExpValue } from '../../../../lib/redis';
 
 const options = {
   method: 'POST',

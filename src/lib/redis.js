@@ -8,18 +8,17 @@ const getClient = () => new Tedis({
 })
 
 const getValue = async (key) => {
-    const client = getClient()
-    const ex = await client.exists(key)
+    const redis = getClient()
+    const ex = await redis.exists(key)
     if (ex > 0) {
-        const value = await client.get(key)
+        const value = await redis.get(key)
         return value
     }
     return null
 }
 const setExpValue = async (key,exp,value) => {
-    const client = getClient()
-    
-    return client.setex(key, exp, value)
+    const redis = getClient()
+    return redis.setex(key, exp, value)
 }
 
 export {

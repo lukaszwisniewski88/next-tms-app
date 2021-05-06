@@ -1,7 +1,7 @@
 import { withApiAuthRequired, getSession } from '@auth0/nextjs-auth0';
 import bent from 'bent';
 import { query as q } from 'faunadb';
-import getClient from '../../../utils/fauna';
+import getClient from '../../../lib/fauna';
 import getServerToken from './__utils/getServerToken';
 
 async function UserMeta(req, res) {
@@ -37,7 +37,6 @@ async function UserMeta(req, res) {
       Authorization: `${type} ${token}`,
     }
   );
-
   res.status(200).json({
       meta: 'META',
      user: session.user.sub,
