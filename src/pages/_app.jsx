@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import { UserProvider } from '@auth0/nextjs-auth0';
 import { AnimateSharedLayout } from 'framer-motion';
 
 import { Global, css } from '@emotion/react';
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro';
+import { UserProvider } from '../context/storeContext';
 
 const customStyles = css`
   :root {

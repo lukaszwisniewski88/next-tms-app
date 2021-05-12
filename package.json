@@ -26,12 +26,14 @@
     "react-icons": "^4.2.0",
     "swr": "^0.5.5",
     "tedis": "^0.1.12",
-    "twin.macro": "^2.3.0"
+    "twin.macro": "^2.3.0",
+    "zustand": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "latest",
     "@emotion/babel-plugin": "latest",
     "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@types/react": "^17.0.5",
     "autoprefixer": "latest",
     "babel-loader": "^8.2.2",
     "eslint": "^7.25.0",

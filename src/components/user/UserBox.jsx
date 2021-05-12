@@ -1,10 +1,13 @@
 import 'twin.macro';
 import { BsFillBellFill as BellIcon } from 'react-icons/bs';
 import { HiChevronDown as ChevronD } from 'react-icons/hi';
-import { useUser } from '@auth0/nextjs-auth0';
+import { useStore } from '../../context/storeContext';
 
 function UserBox() {
-  const { isLoading, user } = useUser();
+  const { user, isLoading } = useStore((state) => ({
+    user: state.user,
+    isLoading: state.isLoading,
+  }));
   return !isLoading ? (
     <>
       <BellIcon tw='w-5 h-5' />
