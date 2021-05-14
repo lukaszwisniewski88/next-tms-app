@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useStore as useUser } from '../context/storeContext';
 
 const withPageAuthRequired = (Component, options = {}) =>
@@ -6,7 +6,7 @@ const withPageAuthRequired = (Component, options = {}) =>
     const loginUrl = process.env.NEXT_PUBLIC_AUTH0_LOGIN || '/api/auth/login';
     const { returnTo } = options;
     const { user, error, isLoading } = useUser();
-    useLayoutEffect(() => {
+    useEffect(() => {
       if ((user && !error) || isLoading) return;
       let returnToPath;
 
@@ -23,6 +23,7 @@ const withPageAuthRequired = (Component, options = {}) =>
       );
     }, [user, error, isLoading]);
 
+    if (isLoading) return <></>;
     if (user) return <Component {...props} />;
     return <></>;
   };

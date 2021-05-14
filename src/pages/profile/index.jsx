@@ -1,4 +1,5 @@
-import { withPageAuthRequired, getSession } from '@auth0/nextjs-auth0';
+import { getSession } from '@auth0/nextjs-auth0';
+import MainLayout from '../../layouts/main';
 
 /**
  *
@@ -9,7 +10,7 @@ function UserProfile({ user }) {
   return (
     <div>
       Imię i nazwisko: {user.name}
-      <img alt="Twoje zdjęcie" src={user.picture} />
+      <img alt='Twoje zdjęcie' src={user.picture} />
     </div>
   );
 }
@@ -24,4 +25,4 @@ export const getServerSideProps = ({ req, res }) => {
 };
 
 UserProfile.PageTitle = 'Profil';
-export default withPageAuthRequired(UserProfile);
+export default MainLayout(UserProfile);

@@ -16,9 +16,19 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@lib', './src/lib'],
+          ['@components', './src/components'],
+        ],
+      },
+    },
+  },
   rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     'react/jsx-props-no-spreading': [
       'warn',
       {
